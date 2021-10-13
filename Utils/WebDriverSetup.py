@@ -21,6 +21,8 @@ from time import sleep
 #     if (browser == "1") or (browser == "2"):
 #         break
 
+browser = 1
+
 class WebDriverSetup(unittest.TestCase):
 
     def setUp(self):
