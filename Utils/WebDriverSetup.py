@@ -15,11 +15,11 @@ from selenium import webdriver
 import unittest
 from time import sleep
 
-#Loop for choose FF or Chrome
-while True:
-    browser = input("Input 1 for FF and 2 for Chrome: ")
-    if (browser == "1") or (browser == "2"):
-        break
+# #Loop for choose FF or Chrome
+# while True:
+#     browser = input("Input 1 for FF and 2 for Chrome: ")
+#     if (browser == "1") or (browser == "2"):
+#         break
 
 class WebDriverSetup(unittest.TestCase):
 
