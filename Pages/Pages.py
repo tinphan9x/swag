@@ -21,11 +21,15 @@ class LoginPage(HomeObject):
         self.password(password)
         self.login_button()
         time.sleep(1)
+        try:
+            return self.error_msg()
+        except:
+            return self.homepage()
 
-    def login_fail(self, username, password):
-        self.login_step(username, password)
-        return self.error_msg()
+    # def login_fail(self, username, password):
+    #     self.login_step(username, password)
+    #     return self.error_msg()
 
-    def login_success(self, username, password):
-        self.login_step(username, password)
-        return self.homepage()
+    # def login_success(self, username, password):
+    #     self.login_step(username, password)
+    #     return self.homepage()
