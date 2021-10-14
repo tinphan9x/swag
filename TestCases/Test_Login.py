@@ -1,5 +1,5 @@
 import sys
-
+import allure
 sys.path.append(sys.path[0] + "/...")
 
 import os
