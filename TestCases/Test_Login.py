@@ -30,7 +30,7 @@ class Test_Login_Page(WebDriverSetup, TestData):
 
     def test_login_username_blank(self):
         self.loginpage=LoginPage(self.driver)
-        error = self.loginpage.login_fail(TestData.NULL,TestData.NULL)
+        error = self.loginpage.login_step(TestData.NULL,TestData.NULL)
         print(error)
         self.assertEqual(TestData.MSG_USER_BLANK, error)
 
@@ -56,7 +56,7 @@ class Test_Login_Page(WebDriverSetup, TestData):
 
     def test_login_username_standard_user(self):
         self.loginpage=LoginPage(self.driver)
-        web_link = self.loginpage.login_success(TestData.STANDARD_USER,TestData.PASSWORD)
+        web_link = self.loginpage.login_step(TestData.STANDARD_USER,TestData.PASSWORD)
         self.assertIn(TestData.HOME_PAGE_URL, web_link)
 
     # def test_login_username_problem_user(self):
