@@ -24,7 +24,7 @@ from time import sleep
 browser = 1
 
 def set_enviroment_for_allure(self):
-    file =  open("./allure-results/environment.properties", mode='w')
+    file =  open("./allure-report/environment.properties", mode='w')
     file.write("Browser=" + self.driver.capabilities['browserName']+"\n")
     file.write("Browser.Version=" + self.driver.capabilities['browserVersion']+"\n")
     file.write("OS=" + self.driver.capabilities['platformName']+"\n")
