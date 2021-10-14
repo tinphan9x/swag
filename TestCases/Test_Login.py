@@ -24,7 +24,7 @@ class Test_Login_Page(WebDriverSetup, TestData):
         print(result)
         self.assertEqual(data_compare, result)
 
-    @pytest.mark.regression
+    #@pytest.mark.regression
     @allure.severity(allure.severity_level.CRITICAL)
     def test_login_username_blank(self):
         return self.base_test(self.page.login_step(self.NULL,self.NULL), self.MSG_USER_BLANK)
@@ -41,22 +41,22 @@ class Test_Login_Page(WebDriverSetup, TestData):
     def test_login_wrong_password(self):
         return self.base_test(self.page.login_step(self.STANDARD_USER,self.STANDARD_USER), self.MSG_WRONG_ACC)
 
-    @pytest.mark.regression
+    #@pytest.mark.regression
     @allure.severity(allure.severity_level.CRITICAL)
     def test_login_username_locked_out_user(self):
         return self.base_test(self.page.login_step(self.LOCKED_OUT_USER,self.PASSWORD), self.MSG_LOCKED_OUT_USER)
 
-    @pytest.mark.regression
+    #@pytest.mark.regression
     @allure.severity(allure.severity_level.CRITICAL)
     def test_login_username_standard_user(self):
         return self.base_test(self.page.login_step(self.STANDARD_USER,TestData.PASSWORD), self.HOME_PAGE_URL)
 
-    @pytest.mark.regression
+    #@pytest.mark.regression
     @allure.severity(allure.severity_level.CRITICAL)
     def test_login_username_problem_user(self):
         return self.base_test(self.page.login_step(self.PROBLEM_USER,TestData.PASSWORD), self.HOME_PAGE_URL)
     
-    @pytest.mark.regression
+    #@pytest.mark.regression
     @allure.severity(allure.severity_level.CRITICAL)
     def test_login_username_performance_glitch_user(self):
         return self.base_test(self.page.login_step(self.PERFORMANCE_GLITCH_USER,TestData.PASSWORD), self.HOME_PAGE_URL)
