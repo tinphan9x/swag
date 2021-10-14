@@ -29,10 +29,11 @@ class Test_Login_Page(WebDriverSetup, TestData):
 
 
     def test_login_username_blank(self):
-        self.loginpage=LoginPage(self.driver)
-        error = self.loginpage.login_step(TestData.NULL,TestData.NULL)
-        print(error)
-        self.assertEqual(TestData.MSG_USER_BLANK, error)
+        return self.base_test(self.page.login_step(self.NULL,TestData.NULL), self.MSG_USER_BLANK)
+        # self.loginpage=LoginPage(self.driver)
+        # error = self.loginpage.login_step(TestData.NULL,TestData.NULL)
+        # print(error)
+        # self.assertEqual(TestData.MSG_USER_BLANK, error)
 
     # def test_login_password_blank(self):
     #     self.loginpage=LoginPage(self.driver)
@@ -55,14 +56,16 @@ class Test_Login_Page(WebDriverSetup, TestData):
     #     self.assertIn(TestData.MSG_LOCKED_OUT_USER, error)
 
     def test_login_username_standard_user(self):
-        self.loginpage=LoginPage(self.driver)
-        web_link = self.loginpage.login_step(TestData.STANDARD_USER,TestData.PASSWORD)
-        self.assertIn(TestData.HOME_PAGE_URL, web_link)
+        return self.base_test(self.page.login_step(self.STANDARD_USER,TestData.PASSWORD), self.HOME_PAGE_URL)
+        # self.loginpage=LoginPage(self.driver)
+        # web_link = self.loginpage.login_step(TestData.STANDARD_USER,TestData.PASSWORD)
+        # self.assertIn(TestData.HOME_PAGE_URL, web_link)
 
-    # def test_login_username_problem_user(self):
-    #     self.loginpage=LoginPage(self.driver)
-    #     web_link = self.loginpage.login_success(TestData.PROBLEM_USER,TestData.PASSWORD)
-    #     self.assertIn(TestData.HOME_PAGE_URL, web_link)
+    def test_login_username_problem_user(self):
+        return self.base_test(self.page.login_step(self.PROBLEM_USER,TestData.PASSWORD), self.HOME_PAGE_URL)
+        # self.loginpage=LoginPage(self.driver)
+        # web_link = self.loginpage.login_success(TestData.PROBLEM_USER,TestData.PASSWORD)
+        # self.assertIn(TestData.HOME_PAGE_URL, web_link)
     
     # def test_login_username_performance_glitch_user(self):
     #     self.loginpage=LoginPage(self.driver)
