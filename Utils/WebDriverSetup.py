@@ -42,7 +42,6 @@ class WebDriverSetup(unittest.TestCase):
             self.driver = webdriver.Firefox(executable_path = TestData.FIREFOX_EXECUTABLE_PATH)
         else:
             self.driver = webdriver.Chrome(TestData.CHROME_EXECUTABLE_PATH, options=chrome_options)
-        #browser should be loaded in maximized window
         self.driver.implicitly_wait(10)
         self.driver.maximize_window()
 
