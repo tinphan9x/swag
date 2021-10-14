@@ -15,17 +15,16 @@ import unittest
 
 @allure.title('Test Login Page')
 @allure.story('Test_Login_Page')
-# Test Class containing all tests
 class Test_Login_Page(WebDriverSetup, TestData):
     def setUp(self):
         super().setUp()
-        self.loginpage=LoginPage(self.driver)
+        self.page = LoginPage(self.driver)
 
     @allure.step
     def base_test(self, result, data_compare):
-        msg_print = result
-        print(msg_print)
-        self.assertEqual(data_compare, msg_print)
+        # msg_print = result
+        # print(msg_print)
+        self.assertEqual(data_compare, result)
 
 
     def test_login_username_blank(self):
