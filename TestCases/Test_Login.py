@@ -29,15 +29,7 @@ class Test_Login_Page(WebDriverSetup, TestData):
     @allure.severity(allure.severity_level.CRITICAL)
     def test_login_username_blank(self):
         return self.base_test(self.page.login_step(self.NULL,self.NULL), self.MSG_USER_BLANK)
-<<<<<<< Updated upstream
-        # self.loginpage=LoginPage(self.driver)
-        # error = self.loginpage.login_step(TestData.NULL,TestData.NULL)
-        # print(error)
-        # self.assertEqual(TestData.MSG_USER_BLANK, error)
         
-=======
-
->>>>>>> Stashed changes
     @allure.severity(allure.severity_level.NORMAL)
     def test_login_password_blank(self):
         return self.base_test(self.page.login_step(self.STANDARD_USER,self.NULL), self.MSG_PASS_BLANK)
