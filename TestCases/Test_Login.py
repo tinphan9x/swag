@@ -1,8 +1,8 @@
-import sys
+import sys, os
 import allure
+import unittest
+import pytest
 sys.path.append(sys.path[0] + "/...")
-
-import os
 #Uncomment if the above example gives you a relative path error
 sys.path.append(os.getcwd())
 
@@ -10,7 +10,6 @@ from TestData.TestData import TestData
 from Pages.Pages import LoginPage
 from Utils.WebDriverSetup import WebDriverSetup
 
-import unittest
 
 
 @allure.title('Test Login Page')
@@ -29,7 +28,7 @@ class Test_Login_Page(WebDriverSetup, TestData):
     @allure.severity(allure.severity_level.CRITICAL)
     def test_login_username_blank(self):
         return self.base_test(self.page.login_step(self.NULL,self.NULL), self.MSG_USER_BLANK)
-        
+
     @allure.severity(allure.severity_level.NORMAL)
     def test_login_password_blank(self):
         return self.base_test(self.page.login_step(self.STANDARD_USER,self.NULL), self.MSG_PASS_BLANK)
